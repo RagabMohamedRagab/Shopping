@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "bootstrap-icons@1.10.3",
+      "destination": "wwwroot/lib/bootstrap-icons/",
+      "files": [
+        "font/fonts/bootstrap-icons.woff",
+        "font/fonts/bootstrap-icons.woff2",
+        "font/bootstrap-icons.min.css"
+      ]
+    },
+    {
+      "library": "bootstrap-datepicker@1.9.0",
+      "destination": "wwwroot/lib/bootstrap-datepicker/"
+    },
+    {
+      "library": "jquery-ajaxy@1.6.1",
+      "destination": "wwwroot/ajaxy/",
+      "files": [
+        "scripts/jquery.ajaxy.min.js"
+      ]
+    },
+    {
+      "library": "toast-css@1.1.0",
+      "destination": "wwwroot/lib/toastr/"
+    },
+    {
+      "library": "toastr.js@2.1.4",
+      "destination": "wwwroot/lib/toastr/",
+      "files": [
+        "toastr.min.js",
+        "toastr.min.css"
+      ]
+    }
+  ]
+}

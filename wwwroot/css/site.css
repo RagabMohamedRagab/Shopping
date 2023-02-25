@@ -1,0 +1,152 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.product-thumbnail {
+    width: 200px;
+}
+.psoter {
+    min-height: 200px;
+    background-size: 100% 100%;
+    background-position:top bottom;
+    background-repeat:no-repeat;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.cardbody {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+.action{
+    display:flex;
+    justify-content:space-between;
+}
+.fgetpass{
+    text-decoration:none;
+    cursor:pointer;
+}
+.fgetpass:hover{
+    text-decoration:underline;
+}
+#count {
+    color: #0d6efd;
+    position: absolute;
+    bottom: 23px;
+    right: 10px;
+    font-size: small;
+}
+#shopping {
+    height: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+    #shopping i.bi-bag-plus-fill {
+        font-size: 6rem;
+        cursor: pointer;
+    }
+.footer-background {
+    background-color: rgb(204, 199, 199);
+}
+
+@media(max-width:991px) {
+    #heading {
+        padding-left: 50px;
+    }
+
+    #prc {
+        margin-left: 70px;
+        padding-left: 110px;
+    }
+
+    #quantity {
+        padding-left: 48px;
+    }
+
+    #produc {
+        padding-left: 40px;
+    }
+
+    #total {
+        padding-left: 54px;
+    }
+}
+
+@media(max-width:767px) {
+    .mobile {
+        font-size: 10px;
+    }
+
+    h5 {
+        font-size: 14px;
+    }
+
+    h6 {
+        font-size: 9px;
+    }
+
+    #mobile-font {
+        font-size: 11px;
+    }
+
+    #prc {
+        font-weight: 700;
+        margin-left: -45px;
+        padding-left: 105px;
+    }
+
+    #quantity {
+        font-weight: 700;
+        padding-left: 6px;
+    }
+
+    #produc {
+        font-weight: 700;
+        padding-left: 0px;
+    }
+
+    #total {
+        font-weight: 700;
+        padding-left: 9px;
+    }
+
+    #image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .col {
+        width: 100%;
+    }
+
+    #zero-pad {
+        padding: 2%;
+        margin-left: 10px;
+    }
+
+    #footer-font {
+        font-size: 12px;
+    }
+
+    #heading {
+        padding-top: 15px;
+    }
+}

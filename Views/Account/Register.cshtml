@@ -1,0 +1,39 @@
+﻿@model RegisterFormViewModel;
+@{
+    ViewData["Title"] = "Form Register";
+}
+<section class="row mt-5">
+    <div class="offset-md-4 col-md-4">
+        <h3 class="text-center" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Register</h3>
+        <form asp-area="" asp-controller="Account" asp-action="Register" asp-antiforgery="true" class="mt-4" > 
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-group mt-3">
+                <label asp-for="Email" class="form-label text-muted"></label>
+                <input asp-for="Email" class="form-control" placeholder="example123@gamil.com" required />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Password" class="form-label text-muted"></label>
+                <input asp-for="Password" class="form-control" placeholder="Password" required />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="ConfirmPassword" class="form-label text-muted"></label>
+                <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password" required />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Phone" class="form-label text-muted"></label>
+                <input asp-for="Phone" class="form-control" placeholder="Phone" required />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" class="btn btn-primary" value="Register"/>
+                <a  asp-controller="Movie" asp-action="Index" class="btn btn-outline-secondary"><i class="bi bi-x-square-fill"></i> Cancel</a>
+            </div>
+        </form>
+    </div>
+</section>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

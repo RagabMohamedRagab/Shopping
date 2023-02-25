@@ -1,0 +1,66 @@
+﻿@model CartViewModel
+@{
+    ViewData["Title"] = "Shopping Cart";
+}
+<section class="row mt-5 w-100 h-100">
+    <div class="col-md-8" >
+
+        @if (Model.Movies.Any())
+        {
+            <form class="table-responsive">
+                <table class="table table-hover">
+                    @foreach (var movie in Model.Movies)
+                    {
+                        <tbody class="text-center"id="@(movie.Id)">
+                            <tr style="cursor:pointer" class="have">
+                                <td class="product-thumbnail"> <img src=@($"data:image/*;base64,{Convert.ToBase64String(movie.Img)}") alt="@movie.Title" class="img-fluid img-thumbnail w-50 h-50" /></td>
+                                <td class="product-thumbnail">@movie.Title</td>
+                                <td class="product-thumbnail"><span class="form-control w-50 Quantity">@movie.Quantity</span><input asp-for="@movie.Id" hidden /></td>
+                                <td class="product-thumbnail"><span class="movie@(movie.Id)">@movie.Price.ToString("0.00")</span></td>
+                                <td class="product-thumbnail" style="font-size:2rem"><i class="bi bi-x text-primary" onclick="Remove(@movie.Id)"></i></td>
+                            </tr>
+                        </tbody>
+                    }
+
+                </table>
+            </form>
+            <div class="d-flex justify-content-between">
+                <a asp-action="Index" asp-controller="Movie" class="btn btn-outline-primary">CONTINUE SHOPPING</a>
+                <p>Total Price :<span id="total">@Model.TotalPrice.ToString("0.00")</span> $</p>
+            </div>
+        }
+        else
+        {
+            <div id="shopping">
+                <img src="~/Images/CartEmpty.png" alt="Cart Empty" class="img-fluid" />
+                <h3>Your Cart is Empty</h3>
+                <a class="btn btn-primary" asp-action="Index" asp-controller="Movie"><i class="bi bi-cart4"></i> RETURN TO SHOP</a>
+            </div>
+        }
+
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-center mb-3">Summary</h5>
+                <div class="card-text">
+                       <form>
+                        <div class="form-group mt-3">
+                            <input type="text" placeholder="Card Name" class="form-control" />
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" placeholder="Card Password" class="form-control" />
+                        </div>
+                        <div class="form-group mt-3 text-center">
+                            <button type="submit" class="btn btn-outline-primary">CheckOut <span id="checkout">@((Model.TotalPrice).ToString("0.00"))</span>  </button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
